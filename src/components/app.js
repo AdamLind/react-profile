@@ -9,31 +9,11 @@ import Blog from "./pages/blog";
 
 import PortfolioDetail from "./portfolio/portfolio-detail";
 import NoMatch from "./pages/no-match";
-import axios from 'axios';
 import NavigationContainer from './navigation/navigation-container';
 
-export default class App extends Component {
-  constructor() {
-    super();
-
-    this.getPortfolioItems = this.getPortfolioItems.bind(this);
-  }
-  getPortfolioItems() {
-    // Make a request for a user with a given ID
-    axios
-      .get('https://adamsplind.devcamp.space/portfolio/portfolio_items')
-      .then(response => {
-        // handle success
-        console.log("response data", response);
-      })
-      .catch(error => {
-        // handle error
-        console.log(error);
-      });
-  }
+export default class App extends Component {  
 
   render() {
-    this.getPortfolioItems();
     return (
       <div className='app'>
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import PortfolioItem from "./portfolio-item";
 
@@ -9,12 +10,7 @@ export default class PortfolioContainer extends Component {
         this.state = {
             pageTitle: "Welcome to my portfolio.",
             isLoading: false,
-            data: [
-                { title: "Quip", category: "eCommerce", slug: 'quip' },
-                { title: "Eventbrite", category: "Scheduling", slug: 'eventbrite' },
-                { title: "Ministry Safe", category: "Enterprise", slug: 'ministry-safe' },
-                { title: "SwingAway", category: "eCommerce", slug: 'swing-away' }
-            ]
+            data: []
         };
 
         this.handleFilter = this.handleFilter.bind(this);
@@ -30,9 +26,26 @@ export default class PortfolioContainer extends Component {
 
     portfolioItems() {
         return this.state.data.map(item => {
-            return <PortfolioItem title={item.title} url={"google.com"} slug={item.slug} />
+            return (<PortfolioItem key={item.id} item={item} />);
         });
     }
+    
+    getPortfolioItems() {
+        // Make a request for a user with a given ID
+        axios
+          .get('https://adamsplind.devcamp.space/portfolio/portfolio_items')
+          .then(response => {
+            // handle success
+            console.log("response data", response);
+            this.setState({
+                data: response.data.portfolio_items
+            });
+          })
+          .catch(error => {
+            // handle error
+            console.log(error);
+          });
+      }
 
     handlePageTitleUpdate() {
         this.setState({
@@ -40,10 +53,15 @@ export default class PortfolioContainer extends Component {
         });
     }
 
+    componentDidMount() {
+        this.getPortfolioItems();
+    }
+
     render() {
         if (this.state.isLoading == true) {
             return ("Loading...")
         }
+
         return (
             <div>
                 <h2>{this.state.pageTitle}</h2>
