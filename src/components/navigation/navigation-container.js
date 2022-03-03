@@ -10,10 +10,22 @@ export default class NavigationComponent extends Component {
         return (
             <div className="nav-wrapper">
                 <div className="left-side">
-                    <NavLink exact to="/">Home</NavLink>
+                    <div className="nav-link-wrapper">
+                        <NavLink exact to="/">Home</NavLink>
+                    </div>
+
+                    <div className="nav-link-wrapper">
                     <NavLink exact to="/about-me" activeClassName='nav-link-active'>About</NavLink>
+                    </div>
+
+                    <div className="nav-link-wrapper">
                     <NavLink exact to="/contact">Contact</NavLink>
+                    </div>
+
+                    <div className="nav-link-wrapper">
                     <NavLink exact to="/blog">Blog</NavLink>
+                    </div>
+                    
                     { false ? <button>Add Blog</button> : null }
                 </div>
 
