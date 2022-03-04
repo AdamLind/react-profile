@@ -28,9 +28,6 @@ export default class Login extends Component {
       <div>
           <h1>LOGIN TO ACCESS YOUR DASHBOARD</h1>
 
-          <h2>{this.state.email}</h2>
-          <h2>{this.state.password}</h2>
-
           <form onSubmit={this.handleSubmit}>
             <input 
               type="email" 
