@@ -7,10 +7,10 @@ export default function() {
       <div
         className="left-column"
         style={{
-          background: "url(" + profilePicture + ") no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}
+          background: 'url(' + profilePicture + ') no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}  
       />
       <div className="right-column">
         Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis
