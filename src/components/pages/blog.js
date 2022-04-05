@@ -90,7 +90,7 @@ class Blog extends Component {
 
     axios
       .get(
-        `https://jordan.devcamp.space/portfolio/portfolio_blogs?page=${
+        `https://adamsplind.devcamp.space/portfolio/portfolio_blogs?page=${
           this.state.currentPage
         }`,
         {
