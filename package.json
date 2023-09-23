@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal portfolio app built in React",
   "engines":{
-    "node": "18.17.1",
+    "node": "16.x.x",
     "npm": "10.1.0"
   },
   "scripts": {
