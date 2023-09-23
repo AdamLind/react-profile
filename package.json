@@ -4,7 +4,7 @@
   "description": "Personal portfolio app built in React",
   "engines":{
     "node": "16.x.x",
-    "npm": "10.1.0"
+    "npm": "8.19.4"
   },
   "scripts": {
     "preinstall": "npm set audit false",
